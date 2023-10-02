@@ -2,6 +2,8 @@ const express = require('express');
 const colors = require('colors');
 const dotenv = require('dotenv').config();
 const userRoute = require('./routes/userRouter');
+const TeacherRoute = require('./routes/TeacherRoute');
+const studentRoute = require('./routes/studentRoute');
 
 
 // init environment variable
@@ -16,6 +18,8 @@ app.use(express.urlencoded({ extended : false }));
 
 // api Router
 app.use('/api/v1/user', userRoute);
+app.use('/api/v1/teacher', TeacherRoute);
+app.use('/api/v1/student', studentRoute);
 
 // listen port
 app.listen(PORT, () => {
